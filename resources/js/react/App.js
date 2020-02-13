@@ -7,6 +7,9 @@ import {
   } from "react-router-dom";
 
 import Header from './components/Header';
+import Home from './components/Home';
+import SingleMovie from './components/SingleMovie';
+import SingleFilm from './components/SingleMovie';
 
 const App = () => {
     return(
@@ -14,13 +17,11 @@ const App = () => {
             <Router>
             <Header />
                 <Switch>
-                <Route exact path="/">
-                    <h1>Home</h1>
-                </Route>
-                <Route path="/about">
-                </Route>
-                <Route path="/dashboard">
-                </Route>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/movie/:id" component={SingleFilm} />
+                    <Route path="/dashboard" />
                 </Switch>
             </Router>
         </div>

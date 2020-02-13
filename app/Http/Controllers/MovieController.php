@@ -39,5 +39,19 @@ class MovieController extends Controller
         
         $movie = new Movie;
 
+        $movies = $movie->all();
+        return response()->json(['data' => $movies], 201);
+
+
+    }
+
+    public function single($id){
+
+        $movies = new Movie;
+        $movie = $movies
+        ->leftJoin('movies_directors', 'movies.id', '=', 'movies_directors.movie_id')
+        ->leftJoin('directors', 'movies_directors.id', '=', 'directors.id')
+        ->where('movies.id', $id)->get();
+        return response()->json(['data' => $movie], 201); 
     }
 }
