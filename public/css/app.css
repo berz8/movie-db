@@ -66,6 +66,9 @@ body {
   margin-top: 140px;
   margin-bottom: 200px;
   color: #fefefe;
+  opacity: 0;
+  -webkit-animation: reveal 1s forwards;
+          animation: reveal 1s forwards;
 }
 
 .home .filmList {
@@ -152,5 +155,25 @@ body {
 .movie .movie-detail .detail-row div {
   margin-right: 50px;
   margin-bottom: 26px;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
