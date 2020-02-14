@@ -55999,6 +55999,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header */ "./resources/js/react/components/Header.js");
 /* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Home */ "./resources/js/react/components/Home.js");
 /* harmony import */ var _components_SingleMovie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/SingleMovie */ "./resources/js/react/components/SingleMovie.js");
+/* harmony import */ var _components_Actors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Actors */ "./resources/js/react/components/Actors.js");
+/* harmony import */ var _components_Directors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Directors */ "./resources/js/react/components/Directors.js");
+/* harmony import */ var _components_NoMatch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/NoMatch */ "./resources/js/react/components/NoMatch.js");
+
+
 
 
 
@@ -56014,11 +56019,63 @@ var App = function App() {
     path: "/movie/:id",
     component: _components_SingleMovie__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/dashboard"
+    path: "/actors",
+    component: _components_Actors__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/directors",
+    component: _components_Directors__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    component: _components_NoMatch__WEBPACK_IMPORTED_MODULE_7__["default"]
   }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./resources/js/react/components/Actors.js":
+/*!*************************************************!*\
+  !*** ./resources/js/react/components/Actors.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Actors = function Actors() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main container nomatch"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Ops... 2"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Actors);
+
+/***/ }),
+
+/***/ "./resources/js/react/components/Directors.js":
+/*!****************************************************!*\
+  !*** ./resources/js/react/components/Directors.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Directors = function Directors() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main container nomatch"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Ops..."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Directors);
 
 /***/ }),
 
@@ -56043,7 +56100,7 @@ function FilmSingleList(props) {
     className: "FilmSingleList"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.cover_url
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.title)));
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (FilmSingleList);
@@ -56072,11 +56129,11 @@ var Header = function Header(props) {
     className: "logo"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Movie DB")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
-  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/"
-  }, "Attori")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/"
-  }, "Registi")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "Film")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/actors"
+  }, "Actors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/directors"
+  }, "Directors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit"
@@ -56168,7 +56225,7 @@ var Home = function Home() {
             case 10:
               _context.prev = 10;
               _context.t0 = _context["catch"](0);
-              console.log(_context.t0);
+              console.log('Errore ' + _context.t0);
 
             case 13:
             case "end":
@@ -56197,6 +56254,34 @@ var Home = function Home() {
 
 /***/ }),
 
+/***/ "./resources/js/react/components/NoMatch.js":
+/*!**************************************************!*\
+  !*** ./resources/js/react/components/NoMatch.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var NoMatch = function NoMatch() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main container nomatch"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Ops..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It seems like the page you were looking for doesn't exist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "backhome",
+    to: "/"
+  }, "Back to Homepage"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NoMatch);
+
+/***/ }),
+
 /***/ "./resources/js/react/components/SingleMovie.js":
 /*!******************************************************!*\
   !*** ./resources/js/react/components/SingleMovie.js ***!
@@ -56210,6 +56295,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -56226,6 +56312,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var SingleFilm = function SingleFilm(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([{
     'title': '',
@@ -56235,10 +56322,18 @@ var SingleFilm = function SingleFilm(props) {
       movie = _useState2[0],
       setMovie = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([{
+    'name': ''
+  }]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      actor = _useState4[0],
+      setActor = _useState4[1];
+
   var url = '/api/movie/single/' + props.match.params.id;
-  console.log(movie);
+  var url2 = '/api/movie/singleactors/' + props.match.params.id;
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getMovie();
+    getActor();
   }, []);
 
   var getMovie =
@@ -56291,7 +56386,69 @@ var SingleFilm = function SingleFilm(props) {
     };
   }();
 
-  var movieDetail = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  var getActor =
+  /*#__PURE__*/
+  function () {
+    var _ref2 = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var response, json;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _context2.next = 3;
+              return fetch(url2, {
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                }
+              });
+
+            case 3:
+              response = _context2.sent;
+              _context2.next = 6;
+              return response.json();
+
+            case 6:
+              json = _context2.sent;
+              setActor(json['data']);
+              _context2.next = 13;
+              break;
+
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](0);
+              console.log(_context2.t0);
+
+            case 13:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 10]]);
+    }));
+
+    return function getActor() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var movieDetail = actor.map(function (n) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      to: "/actors/" + n.id,
+      key: n.id
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      src: n.propic,
+      alt: "actor"
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: "big plot"
+    }, n.name));
+  });
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "container main movie"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "movie-detail"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "poster"
@@ -56342,10 +56499,22 @@ var SingleFilm = function SingleFilm(props) {
     className: "small"
   }, "Awards"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "big plot"
-  }, movie[0].awards)))));
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "container main movie"
-  }, movieDetail);
+  }, movie[0].awards))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "detail-row director"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/directors/" + movie[0].director_id
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "small"
+  }, "Director"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: movie[0].propic,
+    alt: "Director"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "big plot"
+  }, movie[0].name))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "small"
+  }, "Actors"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "actors"
+  }, movieDetail))))), " ;");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SingleFilm);

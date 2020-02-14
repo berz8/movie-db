@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Movie;
+use App\Actor;
 
-class MovieController extends Controller
+class ActorController extends Controller
 {
     //
     public function create(Request $request)
@@ -37,10 +37,10 @@ class MovieController extends Controller
 
     public function all(Request $request){
         
-        $movie = new Movie;
+        $actor = new Actor;
 
-        $movies = $movie->all();
-        return response()->json(['data' => $movies], 201);
+        $actors = $actor->all();
+        return response()->json(['data' => $actors], 201);
 
 
     }
@@ -55,5 +55,18 @@ class MovieController extends Controller
 
 
         return response()->json(['data' => $movie], 201); 
+    }
+
+
+    public function actorsOfMovies($id) {
+
+        $actor = new Actor;
+
+        $actors = $actor
+        ->leftJoin('actors_directors', 'actors.id', '=', 'actors_directors.actor_id')
+        ->where('actors_directors.movie_id', $id)->get();
+
+        return response()->json(['data' => $actors], 201); 
+
     }
 }

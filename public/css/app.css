@@ -69,6 +69,8 @@ body {
   opacity: 0;
   -webkit-animation: reveal 1s forwards;
           animation: reveal 1s forwards;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
 
 .home .filmList {
@@ -155,6 +157,50 @@ body {
 .movie .movie-detail .detail-row div {
   margin-right: 50px;
   margin-bottom: 26px;
+}
+
+.movie .movie-detail .detail-row.director a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.movie .movie-detail .detail-row.director a:hover img {
+  transform: scale(1.07);
+}
+
+.movie .movie-detail .detail-row.director div {
+  max-width: 150px;
+}
+
+.movie .movie-detail .detail-row.director img {
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10px;
+  transition: 350ms all ease;
+}
+
+.nomatch h1 {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.nomatch h2 {
+  font-size: 2.5rem;
+}
+
+.nomatch a {
+  display: inline-block;
+  padding: 12px 50px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  transition: 350ms all ease;
+}
+
+.nomatch a:hover {
+  background-color: #eeeeee;
 }
 
 @-webkit-keyframes reveal {

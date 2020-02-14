@@ -8,8 +8,10 @@ import {
 
 import Header from './components/Header';
 import Home from './components/Home';
-import SingleMovie from './components/SingleMovie';
 import SingleFilm from './components/SingleMovie';
+import Actors from './components/Actors';
+import Directors from './components/Directors';
+import NoMatch from './components/NoMatch';
 
 const App = () => {
     return(
@@ -21,7 +23,9 @@ const App = () => {
                         <Home />
                     </Route>
                     <Route path="/movie/:id" component={SingleFilm} />
-                    <Route path="/dashboard" />
+                    <Route path="/actors" component={Actors} />
+                    <Route path="/directors" component={Directors} />
+                    <Route component={NoMatch} />
                 </Switch>
             </Router>
         </div>

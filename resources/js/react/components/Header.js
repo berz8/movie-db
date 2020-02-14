@@ -12,13 +12,13 @@ const Header = props => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">Film</Link>
                     </li>
                     <li>
-                        <Link to="/">Attori</Link>
+                        <Link to="/actors">Actors</Link>
                     </li>
                     <li>
-                        <Link to="/">Registi</Link>
+                        <Link to="/directors">Directors</Link>
                     </li>
                     <li>
                         <form>

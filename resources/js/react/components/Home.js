@@ -20,7 +20,7 @@ const Home = () => {
                 setMovieList(json['data']);
             }
             catch (error){
-                    console.log(error);
+                    console.log('Errore ' + error);
                 }
     }
 

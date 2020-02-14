@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/movie/create', 'MovieController@create')->name('movie.create');
 Route::get('/movie/all', 'MovieController@all')->name('movie.all');
 Route::get('/movie/single/{id}', 'MovieController@single')->name('movie.single');
+Route::get('/movie/singleactors/{id}', 'ActorController@actorsOfMovies')->name('actor.actorsOfMovies');

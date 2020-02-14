@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const SingleFilm = (props) => {
 
@@ -7,11 +8,17 @@ const SingleFilm = (props) => {
         'poster' : ''
     }]);
 
+    const [actor, setActor] = useState([{
+        'name' : ''
+    }])
+
+
     const url = '/api/movie/single/' + props.match.params.id;
-    console.log(movie);
+    const url2 = '/api/movie/singleactors/' + props.match.params.id;
     
     useEffect(() => {
         getMovie();
+        getActor();
     },[]);
 
 
@@ -30,9 +37,33 @@ const SingleFilm = (props) => {
                 console.log(error);
             }
 }
+    const getActor = async function () {
+        try {const response = await fetch(url2, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                }
+            });
+            const json = await response.json();
+            setActor(json['data']);
+        }
+        catch (error){
+                console.log(error);
+            }
+}
 
-        const movieDetail = 
-                    <div className="movie-detail">
+        const movieDetail = actor.map( n => {
+            return(
+                <Link to={"/actors/" + n.id} key={n.id}>
+                    <img src={n.propic} alt="actor" />
+                    <p className="big plot">{n.name}</p>
+                </Link>
+            )
+        })
+
+    return(
+        <div className="container main movie">
+            <div className="movie-detail">
                         <div className="poster">
                             <img src={movie[0].poster} alt="poster" />
                         </div>
@@ -81,12 +112,23 @@ const SingleFilm = (props) => {
                                     <p className="big plot">{movie[0].awards}</p>
                                 </div>
                             </div>
+                            <div className="detail-row director">
+                                    <div>
+                                        <Link to={"/directors/" + movie[0].director_id}>
+                                            <p className="small">Director</p>
+                                            <img src={movie[0].propic} alt="Director" />
+                                            <p className="big plot">{movie[0].name}</p>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <p className="small">Actors</p>
+                                        <div className="actors">
+                                            {movieDetail}
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
                     </div> ;
-
-    return(
-        <div className="container main movie">
-            {movieDetail}
         </div>
     )
 }
