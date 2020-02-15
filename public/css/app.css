@@ -130,54 +130,105 @@ body {
   height: auto;
 }
 
-.movie .movie-detail .small {
+.small {
   margin: 0;
   font-size: 1rem;
   color: #888888;
 }
 
-.movie .movie-detail h1 {
+h1 {
   margin-top: 6px;
   font-size: 3.1rem;
 }
 
-.movie .movie-detail .big {
+.big {
   font-size: 1.2rem;
   margin-top: 5px;
 }
 
-.movie .movie-detail .big.plot {
+.big.plot {
   max-width: 800px;
 }
 
-.movie .movie-detail .detail-row {
+.detail-row {
   display: flex;
 }
 
-.movie .movie-detail .detail-row div {
+.detail-row div {
   margin-right: 50px;
   margin-bottom: 26px;
 }
 
-.movie .movie-detail .detail-row.director a {
+.detail-row.director a {
   color: #ffffff;
   text-decoration: none;
+  width: 100px;
+  margin-right: 30px;
+  display: block;
 }
 
-.movie .movie-detail .detail-row.director a:hover img {
+.detail-row.director a:hover img {
   transform: scale(1.07);
 }
 
-.movie .movie-detail .detail-row.director div {
-  max-width: 150px;
-}
-
-.movie .movie-detail .detail-row.director img {
+.detail-row.director a img {
   width: 100px;
   border-radius: 50%;
   overflow: hidden;
   margin-top: 10px;
+  margin-left: 0;
   transition: 350ms all ease;
+}
+
+.detail-row.director > div > .actors {
+  display: flex;
+}
+
+.detail-row .movies {
+  margin-top: 20px;
+  display: flex;
+}
+
+.detail-row .movies a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  width: 190px;
+}
+
+.detail-row .movies a:hover img {
+  transform: scale(1.05);
+}
+
+.detail-row .movies a p {
+  font-size: 1.2rem;
+}
+
+.detail-row .movies img {
+  width: 190px;
+  transition: 350ms all ease;
+}
+
+.actor .actor-detail {
+  display: flex;
+}
+
+.actor .actor-detail .propic {
+  width: 210px;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.actor .actor-detail .propic img {
+  width: 100%;
+}
+
+.actor .detail-row p.plot {
+  max-width: 1000px;
 }
 
 .nomatch h1 {

@@ -21,3 +21,10 @@ Route::get('/movie/create', 'MovieController@create')->name('movie.create');
 Route::get('/movie/all', 'MovieController@all')->name('movie.all');
 Route::get('/movie/single/{id}', 'MovieController@single')->name('movie.single');
 Route::get('/movie/singleactors/{id}', 'ActorController@actorsOfMovies')->name('actor.actorsOfMovies');
+Route::get('/actor/{id}', 'ActorController@single')->name('actor.single');
+Route::get('/movie/actor/{id}', 'MovieController@actorsAllMovies');
+
+Route::get('/director/{id}', 'DirectorController@single');
+Route::get('/movie/director/{id}', 'MovieController@directorsAllMovies');
+
+Route::get('/search/movies/{query}', 'MovieController@search');

@@ -47,14 +47,11 @@ class ActorController extends Controller
 
     public function single($id){
 
-        $movies = new Movie;
-        $movie = $movies
-        ->leftJoin('movies_directors', 'movies.id', '=', 'movies_directors.movie_id')
-        ->leftJoin('directors', 'movies_directors.id', '=', 'directors.id')
-        ->where('movies.id', $id)->get();
+        $actors = new Actor;
+        $actor = $actors->where('id', $id)->get();
 
 
-        return response()->json(['data' => $movie], 201); 
+        return response()->json(['data' => $actor], 201); 
     }
 
 
@@ -69,4 +66,5 @@ class ActorController extends Controller
         return response()->json(['data' => $actors], 201); 
 
     }
+
 }

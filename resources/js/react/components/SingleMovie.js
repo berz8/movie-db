@@ -30,7 +30,6 @@ const SingleFilm = (props) => {
                 }
             });
             const json = await response.json();
-            console.log(json);
             setMovie(json['data']);
         }
         catch (error){
@@ -54,8 +53,8 @@ const SingleFilm = (props) => {
 
         const movieDetail = actor.map( n => {
             return(
-                <Link to={"/actors/" + n.id} key={n.id}>
-                    <img src={n.propic} alt="actor" />
+                <Link to={"/actors/" + n.actor_id} key={n.actor_id}>
+                    <img  src={n.propic} alt="actor" />
                     <p className="big plot">{n.name}</p>
                 </Link>
             )
@@ -128,7 +127,7 @@ const SingleFilm = (props) => {
                                     </div>
                             </div>
                         </div>
-                    </div> ;
+                    </div>
         </div>
     )
 }

@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
+import history from './history';
 
 const Header = props => {
+
+    const [searchQuery, setSearchQuery] = useState([]);
+
+    const handleSearch = (event) => {
+        setSearchQuery(event.target.value)
+        let q = '?q=' + event.target.value;
+        if(event.target.value != ''){
+            history.push({ 
+                pathname: '/search',
+                search: q,
+            });
+        } else {
+            history.push('/');
+        }
+    }
 
 
     return(
@@ -12,7 +28,7 @@ const Header = props => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Film</Link>
+                        <Link to="/">Movies</Link>
                     </li>
                     <li>
                         <Link to="/actors">Actors</Link>
@@ -22,8 +38,7 @@ const Header = props => {
                     </li>
                     <li>
                         <form>
-                            <input type="text" />
-                            <button type="submit">Cerca</button>
+                            <input value={searchQuery} onChange={handleSearch} type="text" />
                         </form>
                     </li>
                 </ul>

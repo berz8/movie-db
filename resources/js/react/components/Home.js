@@ -31,7 +31,7 @@ const Home = () => {
 
     return(
         <div className="home container main">
-            <h1>Home</h1>
+            <h1>Movies</h1>
             <div className="filmList">
                 {list}
             </div>
