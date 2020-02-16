@@ -37,9 +37,7 @@ class MovieController extends Controller
 
     public function all(Request $request){
         
-        $movie = new Movie;
-
-        $movies = $movie->all();
+        $movies = Movie::all();
         return response()->json(['data' => $movies], 201);
 
 
