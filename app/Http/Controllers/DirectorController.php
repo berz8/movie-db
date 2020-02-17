@@ -10,11 +10,9 @@ class DirectorController extends Controller
     //
 
     public function all(Request $request){
-        
-        $director = new Director;
 
-        $directors = $director->all();
-        return response()->json(['data' => $director], 201);
+        $directors = Director::all();
+        return response()->json(['data' => $directors], 201);
 
 
     }

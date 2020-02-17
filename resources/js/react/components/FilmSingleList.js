@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Image from "react-graceful-image";
 
 function FilmSingleList(props) {
   return (
     <Link to={'/movie/' + props.id} key={props.id} className="FilmSingleList">
-        <img src={props.cover_url} />
+        <Image src={props.cover_url} />
     </Link>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import Image from "react-graceful-image";
 
 const SingleFilm = (props) => {
 
@@ -54,7 +55,7 @@ const SingleFilm = (props) => {
         const movieDetail = actor.map( n => {
             return(
                 <Link to={"/actors/" + n.actor_id} key={n.actor_id}>
-                    <img  src={n.propic} alt="actor" />
+                    <Image  src={n.propic} width="100" height="100"/>
                     <p className="big plot">{n.name}</p>
                 </Link>
             )
@@ -64,7 +65,7 @@ const SingleFilm = (props) => {
         <div className="container main movie">
             <div className="movie-detail">
                         <div className="poster">
-                            <img src={movie[0].poster} alt="poster" />
+                            <Image src={movie[0].poster} alt="poster" width="100%" height="400"/>
                         </div>
                         <div>
                             <p className="small">Title</p>
@@ -115,7 +116,7 @@ const SingleFilm = (props) => {
                                     <div>
                                         <Link to={"/directors/" + movie[0].director_id}>
                                             <p className="small">Director</p>
-                                            <img src={movie[0].propic} alt="Director" />
+                                            <Image src={movie[0].propic} width="100" height="100" />
                                             <p className="big plot">{movie[0].name}</p>
                                         </Link>
                                     </div>

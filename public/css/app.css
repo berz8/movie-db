@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -45,19 +49,29 @@ body {
   display: block;
   text-decoration: none;
   padding: 8px 10px;
+  color: #aaaaaa;
+  transition: 350ms all ease;
+}
+
+.header nav ul li a:hover {
+  color: #ffffff;
+}
+
+.header nav ul li a.active {
   color: #ffffff;
 }
 
 .header nav ul li form input {
-  border: 1px solid #dddddd;
-  border-radius: 20px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 5px 12px;
+  color: #ffffff;
+  transition: 350ms all ease;
 }
 
-.header nav ul li form button {
-  border: 1px solid #dddddd;
-  border-radius: 20px;
-  padding: 5px 2px;
+.header nav ul li form input:focus {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .container.main {
@@ -208,6 +222,37 @@ h1 {
 .detail-row .movies img {
   width: 190px;
   transition: 350ms all ease;
+}
+
+.actorList {
+  display: flex;
+}
+
+.actorList .singleActorList {
+  display: block;
+  width: 220px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.actorList .singleActorList:hover img {
+  transform: scale(1.1);
+  border: 8px solid #ffffff;
+}
+
+.actorList .singleActorList img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  transition: 350ms all ease;
+}
+
+.actorList .singleActorList p {
+  color: #ffffff;
+  font-size: 1.3rem;
 }
 
 .actor .actor-detail {

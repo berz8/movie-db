@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import history from './history';
 
 const Header = props => {
@@ -28,13 +28,16 @@ const Header = props => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Movies</Link>
+                        <NavLink exact to="/" activeClassName="active">Movies</NavLink>
+                        {/* <Link to="/">Movies</Link> */}
                     </li>
                     <li>
-                        <Link to="/actors">Actors</Link>
+                        <NavLink to="/actors" activeClassName="active">Actors</NavLink>
+                        {/* <Link to="/actors">Actors</Link> */}
                     </li>
                     <li>
-                        <Link to="/directors">Directors</Link>
+                        <NavLink to="/directors" activeClassName="active">Directors</NavLink>
+                        {/* <Link to="/directors">Directors</Link> */}
                     </li>
                     <li>
                         <form>

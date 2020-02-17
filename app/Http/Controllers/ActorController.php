@@ -36,10 +36,8 @@ class ActorController extends Controller
     }
 
     public function all(Request $request){
-        
-        $actor = new Actor;
 
-        $actors = $actor->all();
+        $actors = Actor::all();
         return response()->json(['data' => $actors], 201);
 
 

@@ -15,6 +15,8 @@ import Actors from './components/Actors';
 import Directors from './components/Directors';
 import NoMatch from './components/NoMatch';
 import Search from './components/Search';
+import ActorsMain from './components/ActorsMain';
+import DirectorsMain from './components/DirectorsMain';
 
 const App = () => {
     return(
@@ -26,8 +28,10 @@ const App = () => {
                         <Home />
                     </Route>
                     <Route path="/movie/:id" component={SingleFilm} />
+                    <Route exact path="/actors" component={ActorsMain} />
                     <Route path="/actors/:id" component={Actors} />
                     <Route path="/directors/:id" component={Directors} />
+                    <Route exact path="/directors" component={DirectorsMain} />
                     <Route path="/search" component={Search} />
                     <Route component={NoMatch} />
                 </Switch>

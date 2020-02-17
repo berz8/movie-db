@@ -11,26 +11,26 @@ class MovieController extends Controller
     public function create(Request $request)
     {
         $movie = new Movie;
-        $movie->title = 'The Hateful Height';
-        $movie->year = '2015';
+        $movie->title = '1917';
+        $movie->year = '2019';
         $movie->rated = 'R';
-        $movie->released = '30 Dec 2015';
-        $movie->runtime = '168 min';
-        $movie->writer = 'Quentin Tarantino';
-        $movie->plot = "In the dead of a Wyoming winter, a bounty hunter and his prisoner find shelter in a cabin currently inhabited by a collection of nefarious characters.";
-        $movie->language = 'English, Spanish, French';
+        $movie->released = '10 Jan 2020';
+        $movie->runtime = '119 min';
+        $movie->writer = 'Sam Mendes, Krysty Wilson-Cairns';
+        $movie->plot = "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.";
+        $movie->language = 'English, French, German';
         $movie->country = 'USA';
-        $movie->awards = 'Won 1 Oscar. Another 40 wins & 115 nominations.';
-        $movie->poster = 'https://m.media-amazon.com/images/M/MV5BMjA1MTc1NTg5NV5BMl5BanBnXkFtZTgwOTM2MDEzNzE@._V1_SX300.jpg';
-        $movie->boxoffice = '$54,116,191';
-        $movie->production = 'The Weinstein Company';
+        $movie->awards = 'Won 3 Oscars. Another 103 wins & 152 nominations.';
+        $movie->poster = 'https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_SX300.jpg';
+        $movie->boxoffice = 'N/A';
+        $movie->production = 'Universal Pictures';
 
         
 
         $movie->save();
 
-        $director = \App\Director::find(1);
-        $movie->directors()->attach($director);
+        // $director = \App\Director::find(1);
+        // $movie->actors()->attach($director);
 
         return 'Success';
     }

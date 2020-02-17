@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import FilmSingleList from './FilmSingleList';
 
+
 const Home = () => {
 
     const [movieList, setMovieList] = useState([]);
